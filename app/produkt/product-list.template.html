@@ -1,0 +1,29 @@
+    <div class="row">
+    <div class="col-md-11">
+        <div>
+            <input type="text"placeholder="Sök produkt" ng-model="search">
+            <select name="CategorySelect" ng-model="category" ng-options="category.name for category in categories">
+                <option value="">Välj kategori (Alla)</option>
+            </select>
+        </div>
+        <table class="table table-hover table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Bildar</th>
+                    <th>Namn</th>
+                    <th>Pris</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products | filter : search | filter :{categoryId:category.id}" ng-click="productClicked(product.id)">
+                    <td><img ng-src="{{product.imageUrl}}"></td>
+                    <td>{{ product.name}}</td>
+                    <td>{{ product.price }}kr</td>
+                    <!--Slut i lager-->
+                    <td ng-if="product.unitsInStock==0"><p class="text-danger">Slut i Lager</p></td>
+                    <td ng-if="product.unitsInStock>0"><p class="text-success">Finns i Lager</p></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <base href="/">
+	<title>gunhildwebbutik</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="bower_components/angular/angular.min.js"></script>  
+  <script src="bower_components/angular-route/angular-route.min.js"></script>  
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script> 
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script> 
+
+  <script src="app/app.module.js"></script>
+  <script src="app/app.config.js"></script>
+  <script src="app/app.service.js"></script>
+  <script src="app/app.controller.js"></script>
+
+  <script src="app/produkt/product.module.js"></script>
+  <script src="app/produkt/product.controller.js"></script>
+  <script src="app/produkt/product-list.controller.js"></script>
+
+  <script src="app/produkt/product.service.js"></script>
+  <script src="app/produkt/product.categoryservice.js"></script>
+  <script src="app/produkt/product-detail.controller.js"></script>
+
+    <script src="app/kund/customer.module.js"></script>
+    <script src="app/kund/customer.service.js"></script>
+    <script src="app/kund/customer.controller.js"></script>
+
+  <script src="app/login/login.module.js"></script>
+  <script src="app/login/login.service.js"></script>
+  <script src="app/login/login.controller.js"></script>
+
+    <script src="app/kundvagn/cart.module.js"></script>
+    <script src="app/kundvagn/cart.service.js"></script>
+    <script src="app/kundvagn/cart.controller.js"></script>
+</head>
+<body ng-app="app" ng-controller="productController">
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+           <div class="navbar-header">
+                <a class="navbar-brand" href="/">Gunhildklädbutik</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/" ng-click="categoryChosen(0)"><span class="glyphicon glyphicon-home"></span> Hem</a></li>
+                <li><a href="/about">Om</a></li>
+                <li><a href="/contact">Kontakt</a></li>
+            </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Kundvagn</a></li>
+                  <li ng-hide="loggedIn"><a href="/new-user"><span class="glyphicon glyphicon-user"></span> Skapa användare</a></li>
+                  <li ng-hide="loggedIn"><a id="login" href="/login"><span class="glyphicon glyphicon-log-in"></span> Logga in</a></li>
+                  <li ng-show="loggedIn"><a ng-click="logOut()" id="logout" href="/"><span class="glyphicon glyphicon-log-out"></span> Logga ut</a></li>
+              </ul>
+            </ul>
+        </nav>
+      </div>
+      <div ng-view></div>
+    </div>
+  </body>
+</html>

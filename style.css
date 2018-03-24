@@ -1,0 +1,32 @@
+.container {
+     position: relative;
+}
+td img {
+    width: 150px;
+    height: 200px;
+}
+a img {
+    width: 150px;
+    height: 200px;
+}
+#open,#address{
+    color: red;
+}
+#pos{    
+    text-align: center;
+    background-image: url("img/kontakt.jpg");
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+}
+#account{
+    background-image: url("img/account.jpg");
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: center;
+}
+#vagnImg{
+    width: auto; 
+    height: auto;
+    max-width: 50px;
+    max-height: 40px
+}

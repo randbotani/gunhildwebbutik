@@ -1,0 +1,25 @@
+<div id="account" class="control-label col-md-6">
+    <h2>Skapa en ny kund</h2>   
+<form name="form" ng-submit="createCustomer()">
+        <label for="firstName" class="control-label col-md-2">Förnamn:</label>
+        <input type="text" class="form-control" placeholder="*Förnamn" ng-model="customer.firstName" required /><br>
+        <label for="lastName" class="control-label col-md-2">Efternamn:</label>
+        <input type="text" class="form-control" placeholder="*Efternamn" ng-model="customer.lastName" required /><br>
+        <label for="email" class="control-label col-md-2">Epost:</label>
+        <input type="email" class="form-control" placeholder="*Epost" ng-model="customer.email" required /><br>
+        <label for="password" class="control-label col-md-2">Lösenord:</label>
+        <input type="password" class="form-control" placeholder="*Lösenord" ng-model="customer.password" required /><br>
+        <label for="phone" class="control-label col-md-2">Telefon:</label>
+        <input type="text" class="form-control" placeholder="*Telefon" ng-model="customer.phone" required /><br>
+        <label for="address" class="control-label col-md-2">Gatuadress:</label>
+        <input type="text" class="form-control" placeholder="*Gatuadress" ng-model="customer.address" required /><br>
+        <label for="postalCode" class="control-label col-md-2">Postnummer:</label>
+        <input type="text" class="form-control" placeholder="*Postnummer" ng-model="customer.postalCode" required /><br>
+        <label for="city" class="control-label col-md-2">Ort:</label>
+        <input type="text" class="form-control" placeholder="*Ort" ng-model="customer.city" required /><br>
+
+        <a class="btn btn-primary" type="submit" ng-disabled="form.$invalid" ng-click="createCustomer()">Spara</a>
+        <a class="btn btn-primary btn" href="/products">Avbryt</a>
+</form>
+
+</div>

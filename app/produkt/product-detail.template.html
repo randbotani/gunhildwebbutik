@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12" action="/products">
+
+        <hr>
+        <table class="table table-hover table-striped table-condensed">
+            <thead>
+            <tr>
+                <th>Bild</th>
+                <th>Namn</th>
+                <th>Beskrivning</th>
+                <th>Pris</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td><img ng-src="{{product.imageUrl}}"></td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }} kr</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-1" action="/products">
+        <form name="form">
+            
+            <b ng-show="product.unitsInStock == 0">Varan är slut i lager</b>
+            <button class="btn btn-success" ng-click="addToCart(product)"  
+            ng-disabled="antal > product.unitsInStock || form.$invalid" href="/products">Lägg till vagn</button>
+        </form>
+        <a class="btn btn-primary btn" href="/products">Avbryt</a>
+    </div>
+</div>

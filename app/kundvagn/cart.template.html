@@ -1,0 +1,28 @@
+<div class="col-md-12 text-center background_yellow border">
+
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Bildar</th>
+            <th>Namn</th>
+            <th>Antal</th>
+            <th>Pris</th>
+            <th>Total</th>
+        </tr>
+        <tr ng-repeat="product in cartContain ">
+            <td><img id="vagnImg" ng-src="{{product.productImage}}"></td>
+            <td>{{product.productName}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.productPris}} kr</td>
+            <td>{{product.quantity * product.productPris}} kr</td>
+        </tr>
+    </table>
+        <td>Total ordervärde :</td>
+        <td>{{total}} kr</td>
+        
+    <div class="col-md-6" action="/products">
+        <button class="btn btn-success" ng-disabled="!isloggedin"  ng-click="buy(product)">Beställ</button>
+        <a class="btn btn-primary btn" href="/products">Fortsätt handla</a><br>
+        <b ng-hide="isloggedin">Du måste logga in för att kunna beställa</b>
+
+    </div>
+</div>
